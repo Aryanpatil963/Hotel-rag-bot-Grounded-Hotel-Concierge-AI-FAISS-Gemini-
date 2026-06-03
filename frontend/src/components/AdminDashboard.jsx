@@ -32,7 +32,8 @@ export default function AdminDashboard() {
     setLoading(true);
     try {
       // 1. Fetch Stats
-      const statsRes = await fetch('http://127.0.0.1:8000/api/admin/stats');
+      const API_URL = import.meta.env.VITE_API_URL || 'http://127.0.0.1:8000';
+      const statsRes = await fetch(`${API_URL}/api/admin/stats`);
       if (statsRes.ok) {
         const statsData = await statsRes.json();
         // Merge fetched data with defaults if values are missing or zero
@@ -48,7 +49,8 @@ export default function AdminDashboard() {
       }
 
       // 2. Fetch Recent Queries
-      const queriesRes = await fetch('http://127.0.0.1:8000/api/admin/queries?limit=10');
+      const API_URL = import.meta.env.VITE_API_URL || 'http://127.0.0.1:8000';
+      const queriesRes = await fetch(`${API_URL}/api/admin/queries?limit=10`);
       if (queriesRes.ok) {
         const queriesData = await queriesRes.json();
         setQueries(queriesData);
@@ -71,7 +73,8 @@ export default function AdminDashboard() {
   const handleReindex = async () => {
     setLoading(true);
     try {
-      const res = await fetch('http://127.0.0.1:8000/api/ingest', { method: 'POST' });
+      const API_URL = import.meta.env.VITE_API_URL || 'http://127.0.0.1:8000';
+      const res = await fetch(`${API_URL}/api/ingest`, { method: 'POST' });
       if (res.ok) {
         alert("Knowledge base successfully re-indexed!");
         fetchData();
