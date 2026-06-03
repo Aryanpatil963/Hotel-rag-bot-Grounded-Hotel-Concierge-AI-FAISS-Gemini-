@@ -1,0 +1,21 @@
+:root {
+  --color-primary: #0A1128;
+  --color-secondary: #D4AF37;
+  --color-tertiary: #4A4E69;
+  --color-background: #FDFCF0;
+  --font-display: 'Playfair Display', serif;
+  --font-body: 'Inter', sans-serif;
+  --border-radius-sm: 6px;
+  --border-radius-md: 10px;
+  --border-radius-lg: 16px;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-primary);
+  font-family: var(--font-body);
+}
+
+h1, h2, h3, h4, h5, h6, .font-playfair {
+  font-family: var(--font-display);
+}

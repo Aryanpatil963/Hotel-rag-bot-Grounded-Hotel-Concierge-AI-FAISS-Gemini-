@@ -1,0 +1,20 @@
+{
+  "room_types": [
+    {
+      "type": "Deluxe King",
+      "floor": "4-8",
+      "features": ["King bed", "City view", "32sqm", "Rain shower", "Minibar"]
+    },
+    {
+      "type": "Junior Suite",
+      "floor": "9-11",
+      "features": ["King bed", "Separate living area", "48sqm", "Bathtub + shower", "Espresso machine"]
+    },
+    {
+      "type": "Grand Suite",
+      "floor": "12",
+      "features": ["King bed", "Panoramic city view", "72sqm", "Private terrace", "Butler service"]
+    }
+  ],
+  "note": "Room rates and availability must be confirmed with the front desk directly."
+}
