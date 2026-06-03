@@ -25,7 +25,11 @@ from app.database import (
 async def lifespan(app: FastAPI):
     # Startup tasks
     init_db()
-    rag_engine.load_resources()
+    
+    # Load RAG resources in a background thread to prevent blocking port binding
+    import asyncio
+    asyncio.create_task(asyncio.to_thread(rag_engine.load_resources))
+    
     yield
     # Shutdown tasks
     print("[Shutdown] Cleaning up and releasing RAG resources...")
