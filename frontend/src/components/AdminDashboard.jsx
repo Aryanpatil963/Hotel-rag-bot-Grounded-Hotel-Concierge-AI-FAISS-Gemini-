@@ -49,7 +49,6 @@ export default function AdminDashboard() {
       }
 
       // 2. Fetch Recent Queries
-      const API_URL = import.meta.env.VITE_API_URL || 'http://127.0.0.1:8000';
       const queriesRes = await fetch(`${API_URL}/api/admin/queries?limit=10`);
       if (queriesRes.ok) {
         const queriesData = await queriesRes.json();
